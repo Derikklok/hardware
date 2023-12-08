@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <style>
+        #navbar {
+            background-color: black;
+            color: white;
+            margin: -8px;
+            border: 0px;
+            padding: 20px;
+        }
+
+        #C1 {
+            text-align: right;
+            display: flex;
+            align-items: center;
+            margin-top: -40px;
+            margin-left: -30%;
+            margin-bottom: 10px;
+            margin-right: 100px;
+            justify-content: flex-end;
+            font-family: poppins;
+        }
+
+        h1 {
+            margin-right: 10px;
+        }
+
+        #C2 {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 20px;
+
+        }
+
+        #C2:hover {
+            color: rgb(109, 109, 109);
+            text-decoration: none;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1.3s ease-in-out;
+
+        }
+
+        #popup {
+            background-color: white;
+            padding: 80px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 1.3s ease-in-out;
+
+        }
+
+        #close-btn {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        #C3 {
+            font-family: poppins;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: -35px;
+        }
+
+        #C4 {
+            background-color: rgb(234, 234, 234);
+            border-radius: 30px;
+            font-family: poppins;
+            text-align: center;
+            padding-bottom: 100px;
+            width: 25%;
+            margin-left: 20%;
+
+
+        }
+
+        #C5 {
+            background-color: black;
+            color: white;
+            font-family: poppins;
+            border-radius: 25px;
+            text-align: center;
+            margin: 500px;
+            margin-top: -70px;
+            margin-left: 22%;
+            margin-right: 58%;
+
+        }
+
+        #C6 {
+            background-color: rgb(234, 234, 234);
+            border-radius: 30px;
+            font-family: poppins;
+            text-align: center;
+            padding-bottom: 100px;
+            width: 25%;
+            margin-left: 60%;
+            margin-top: -58.441%;
+
+        }
+
+        #C7 {
+            background-color: black;
+            color: white;
+            font-family: poppins;
+            border-radius: 25px;
+            text-align: center;
+            margin-top: -70px;
+            margin-left: 62%;
+            margin-right: 16.7%;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid rgb(220, 220, 220);
+            border-collapse: collapse;
+            border-radius: 15px;
+        }
+
+        #C8 {
+            background-color: rgb(234, 234, 234);
+            border-radius: 15px;
+            padding: 10px 100px 100px 30px;
+            font-family: poppins;
+            margin-bottom: -50px;
+            margin-top: -20px;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            margin-top: 40px;
+            padding: 40px;
+            margin-bottom: -10px;
+            margin-left: -10px;
+            margin-right: -10px;
+
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #popup table,
+        #popup th,
+        #popup td {
+            border: 2px solid rgb(220, 220, 220);
+            border-collapse: collapse;
+            border-radius: 15px;
+            width: 100%;
+        }
+
+        a{
+            background-color: black;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        a:hover{
+            color: orange;
+        }
+       
+
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div>
+            <img src="icons8-circled-f-50.png" alt="top-menu-icon" width="3%" style="margin-left: 50px;">
+
+            <div id="C1">
+                <a id="C2" onclick="openPopup()">MY ORDER</a>
+                <img src="icons8-kawaii-taco-30.png" alt="top-menu-icon-right" width="2%">
+            </div>
+        </div>
+    </nav>
+
+    <div id="C3">
+        <h1>FOODIE</h1>
+        <p style="color: rgb(197, 197, 197); margin-top: -30px;">YOUR SMART ORDER PLACEMENT SYSTEM</p>
+        <p style="color: black; font-family: poppins; text-align: center; font-size: 40px; margin-top: -20px;margin-left: 0px;margin-right: 0px;
+         border: 2px dashed rgb(208, 208, 208); border-radius: 15px;">FOODIES</p>
+    </div>
+
+    <div id="C8">
+        <h2>Select Food Item</h2>
+        <div>
+            <form id="orderForm">
+                <label for="foodItem">Select Food Item:</label>
+                <select id="foodItem" required>
+                    <option value="Burger">Burger</option>
+                    <option value="Sausage Bun">Sausage Bun</option>
+                    <option value="Milo">Milo</option>
+                    <option value="Ice-Cream">Ice-Cream</option>
+                </select>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" max="5" required>
+
+                <button type="button" onclick="addItem()">Add Item</button>
+                <button type="submit" id="submitButton" style="display: none;">Submit Order</button>
+                <div id="orderSummary"></div>
+
+                
+            </form>
+        </div>
+    </div>
+
+    <div id="overlay">
+        <div id="popup">
+            <span id="close-btn" onclick="closePopup()">x</span>
+            <!-- Add your content for the popup here -->
+            <h2>Your Order Details</h2>
+            <table>
+                <tr>
+                    <th style="width: 70%;">Description</th>
+                    <th>Quantity</th>
+                </tr>
+                <tbody id="orderTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <a href="index.html">Back</a>
+    <!--    <a href="drinks.html" style="margin-left: 80%;">Next</a>-->
+
+    <footer>
+        <span>C-All Rights Reserved-2023</span>
+    </footer>
+
+    
+    <script src="order.js">    
+    </script>
+       
+  
+</body>
+
+</html>
